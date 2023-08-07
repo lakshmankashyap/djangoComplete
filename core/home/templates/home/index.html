@@ -1,0 +1,27 @@
+    {% extends "base.html" %}
+    {% block start %}
+    <h2>This Template is return by Django Server</h2>
+    <a href="/contact/">Contact</a>
+    <a href="/about/">About</a>
+    <table class="container">
+        <tr>
+            <th>
+                Sno
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Age
+            </th> 
+         </tr>
+         {% for people in peoples %}
+         <tr>
+            <td>{{forloop.counter}}{{text|truncatechars:8 }}</td>
+            <td>{{people.name}}</td>
+            <td>{{people.age}}</td>
+         </tr>
+         {% endfor %}
+    </table>
+    {% endblock %}
+   
